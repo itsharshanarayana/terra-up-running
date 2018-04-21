@@ -5,10 +5,8 @@ provider "aws" {
 
 # AWS instance resource to be created with identifier "example".
 resource "aws_instance" "example" {
-
     ami = "ami-6dfe5010"
     instance_type = "t2.micro"
-
     user_data = <<-EOF
                 #!/bin/bash
                 echo "Hello, World" > index.html
@@ -22,20 +20,17 @@ resource "aws_instance" "example" {
     tags {
         Name = "Terraform-Example"
     }
-
 }
 
 # AWS security group to be created with identifier "my_sg".
 resource "aws_security_group" "my_sg" {
     name = "terraform-example-instance1"
-
     ingress {
         from_port = 8080
         to_port = 8080
         protocol = "tcp"
         cidr_blocks = ["0.0.0.0/0"]
     }
-
     tags {
         Name = "Terraform-Security-Group"
     }
