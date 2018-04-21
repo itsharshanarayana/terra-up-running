@@ -3,7 +3,7 @@ provider "aws" {
     region = "us-east-1"
 }
 
-# AWS instance resource to be created with name "example".
+# AWS instance resource to be created with identifier "example".
 resource "aws_instance" "example" {
 
     ami = "ami-6dfe5010"
@@ -25,7 +25,7 @@ resource "aws_instance" "example" {
 
 }
 
-# AWS security group to be created with name "my_sg".
+# AWS security group to be created with identifier "my_sg".
 resource "aws_security_group" "my_sg" {
     name = "terraform-example-instance1"
 
