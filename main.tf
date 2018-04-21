@@ -6,3 +6,4 @@ resource "aws_instance" "example" {
     ami = "ami-6dfe5010"
     instance_type = "t2.micro"
 }
+
